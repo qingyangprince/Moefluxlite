@@ -1,0 +1,497 @@
+/* ===== 全局重置 & 基础 ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'PingFang SC', Roboto, system-ui, sans-serif;
+    background-color: #f9f7fc;
+    color: #1e1a2b;
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== 暗色主题 (由 JS 切换类) ===== */
+body.dark-mode {
+    background-color: #1a1625;
+    color: #e4def7;
+}
+
+body.dark-mode .site-header,
+body.dark-mode .site-footer {
+    background-color: #241f32;
+    border-color: #3d3650;
+}
+
+body.dark-mode .about-card,
+body.dark-mode .feature-item,
+body.dark-mode .news-item {
+    background-color: #2c263b;
+    color: #ddd6f0;
+}
+
+body.dark-mode .btn-outline {
+    border-color: #9b8bc7;
+    color: #cbbff0;
+}
+
+body.dark-mode .btn-outline:hover {
+    background-color: #3d3650;
+}
+
+body.dark-mode .btn-primary {
+    background-color: #7b6bb0;
+    color: #fff;
+}
+
+body.dark-mode .btn-primary:hover {
+    background-color: #9484c9;
+}
+
+/* ===== 头部 ===== */
+.site-header {
+    background: #ffffff;
+    border-bottom: 2px solid #ece8f5;
+    padding: 16px 0;
+    transition: background 0.3s, border-color 0.3s;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.brand h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #5b4a8a;
+    display: inline-block;
+    margin-right: 12px;
+}
+
+.brand .tagline {
+    font-size: 0.9rem;
+    color: #7b6b9e;
+    background: #f0ebf9;
+    padding: 4px 12px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 24px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #3d3257;
+    font-weight: 500;
+    padding: 6px 0;
+    border-bottom: 2px solid transparent;
+    transition: 0.2s;
+}
+
+.main-nav a.active,
+.main-nav a:hover {
+    border-bottom-color: #7b6bb0;
+    color: #5b4a8a;
+}
+
+.header-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+/* ===== 按钮 ===== */
+.btn-primary {
+    background: #6b5b9e;
+    color: #fff;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-primary:hover {
+    background: #8a7abb;
+    transform: scale(1.02);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 1.5px solid #6b5b9e;
+    color: #6b5b9e;
+    padding: 7px 18px;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-outline:hover {
+    background: #6b5b9e;
+    color: #fff;
+}
+
+/* ===== Hero 欢迎区 ===== */
+.hero {
+    padding: 50px 0 30px;
+    background: linear-gradient(145deg, #f3effa, #eae4f5);
+    transition: background 0.3s;
+}
+
+body.dark-mode .hero {
+    background: linear-gradient(145deg, #1f1a2e, #2a233b);
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.hero-text h2 {
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: #4d3d78;
+    margin-bottom: 6px;
+}
+
+body.dark-mode .hero-text h2 {
+    color: #cbbff0;
+}
+
+.hero-sub {
+    font-size: 1.2rem;
+    color: #5d4f7a;
+    margin-bottom: 24px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.hero-mascot .mascot-placeholder {
+    font-size: 6rem;
+    line-height: 1.2;
+    background: rgba(107, 91, 158, 0.08);
+    padding: 20px 30px;
+    border-radius: 60px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.04);
+}
+
+/* ===== 关于部分 ===== */
+.about-section {
+    padding: 50px 0 30px;
+}
+
+.about-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    color: #4d3d78;
+}
+
+body.dark-mode .about-section h2 {
+    color: #cbbff0;
+}
+
+.about-legacy {
+    background: #f1ecf9;
+    padding: 20px 28px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    border-left: 6px solid #7b6bb0;
+}
+
+body.dark-mode .about-legacy {
+    background: #2c263b;
+    border-left-color: #9b8bc7;
+}
+
+.about-legacy p {
+    margin-bottom: 10px;
+}
+
+.about-legacy p:last-child {
+    margin-bottom: 0;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    margin-top: 10px;
+}
+
+.about-card {
+    background: #ffffff;
+    padding: 24px 22px;
+    border-radius: 24px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+    transition: 0.2s;
+}
+
+body.dark-mode .about-card {
+    background: #2c263b;
+}
+
+.about-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 28px rgba(0,0,0,0.06);
+}
+
+.about-icon {
+    font-size: 2.4rem;
+    margin-bottom: 8px;
+}
+
+/* ===== 社区风向 ===== */
+.features-section {
+    padding: 40px 0 30px;
+    background: #f5f1fa;
+    transition: background 0.3s;
+}
+
+body.dark-mode .features-section {
+    background: #1e1a2b;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #4d3d78;
+}
+
+body.dark-mode .section-title {
+    color: #cbbff0;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+}
+
+.feature-item {
+    background: #ffffff;
+    padding: 24px 18px;
+    border-radius: 28px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    transition: 0.2s;
+}
+
+body.dark-mode .feature-item {
+    background: #2c263b;
+}
+
+.feature-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.06);
+}
+
+.feature-icon {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+}
+
+.feature-item h3 {
+    font-size: 1.2rem;
+    margin-bottom: 6px;
+    color: #3d3257;
+}
+
+body.dark-mode .feature-item h3 {
+    color: #ddd6f0;
+}
+
+/* ===== 最新动态 ===== */
+.news-section {
+    padding: 40px 0 50px;
+}
+
+.news-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.news-item {
+    background: #ffffff;
+    padding: 16px 22px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    border-left: 5px solid #7b6bb0;
+}
+
+body.dark-mode .news-item {
+    background: #2c263b;
+    border-left-color: #9b8bc7;
+}
+
+.news-tag {
+    background: #e4def7;
+    color: #4d3d78;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 2px 14px;
+    border-radius: 30px;
+    letter-spacing: 0.3px;
+}
+
+body.dark-mode .news-tag {
+    background: #3d3650;
+    color: #cbbff0;
+}
+
+.news-item p {
+    flex: 1;
+    margin: 0;
+    font-weight: 500;
+}
+
+.news-item time {
+    font-size: 0.85rem;
+    color: #7b6b9e;
+}
+
+body.dark-mode .news-item time {
+    color: #a99bc9;
+}
+
+/* ===== 页脚 ===== */
+.site-footer {
+    background: #f0ebf6;
+    border-top: 2px solid #e1d9ed;
+    padding: 36px 0 24px;
+    transition: 0.3s;
+}
+
+body.dark-mode .site-footer {
+    background: #1f1a2e;
+    border-top-color: #3d3650;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer-brand h2 {
+    font-size: 1.8rem;
+    color: #5b4a8a;
+}
+
+body.dark-mode .footer-brand h2 {
+    color: #b5a6d9;
+}
+
+.footer-brand p {
+    color: #5d4f7a;
+    margin: 6px 0 10px;
+}
+
+.footer-links ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #4d3d78;
+}
+
+body.dark-mode .footer-links a {
+    color: #b5a6d9;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+.footer-social {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 16px;
+    font-size: 1.6rem;
+}
+
+.social-icons a {
+    text-decoration: none;
+    color: #5b4a8a;
+    transition: 0.2s;
+}
+
+body.dark-mode .social-icons a {
+    color: #b5a6d9;
+}
+
+.social-icons a:hover {
+    transform: scale(1.15);
+}
+
+/* ===== Toast ===== */
+.toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #4d3d78;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 40px;
+    box-shadow: 0 8px 28px rgba(0,0,0,0.18);
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.4s, transform 0.4s;
+    pointer-events: none;
+    z-index: 999;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.toast.hidden {
+    display: none;
+}
