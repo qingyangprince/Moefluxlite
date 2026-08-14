@@ -534,14 +534,14 @@
             <div class="container hero-content">
                 <div class="hero-text">
                     <h2>欢迎来到 moeflux！</h2>
-                    <p class="hero-sub">✨ 二次元爱好者的理想乡 · 科技极客的清净地</p>
+                    <p class="hero-sub"> 二次元爱好者的理想乡 · 科技极客的清净地</p>
                     <div class="hero-buttons">
                         <button class="btn-primary" id="exploreBtn">探索社区</button>
                         <button class="btn-outline" id="discordBtn">加入讨论</button>
                     </div>
                 </div>
                 <div class="hero-mascot">
-                    <div class="mascot-placeholder">⛩️</div>
+                    <div class="mascot-placeholder"></div>
                 </div>
             </div>
         </section>
@@ -558,11 +558,11 @@
                 <!-- 同时用卡片方式呈现，更具设计感 -->
                 <div class="about-grid">
                     <div class="about-card">
-                        <div class="about-icon">🌸</div>
+                        <div class="about-icon"></div>
                         <p>moeflux是一个二次元讨论社区，致力于为二次元爱好者提供一个交流和分享的平台。同时我们也为科技等爱好者提供干净的网络空间。</p>
                     </div>
                     <div class="about-card">
-                        <div class="about-icon">🛡️</div>
+                        <div class="about-icon"></div>
                         <p>moeflux的目标是成为一个安全、友好和有趣的社区，让每个人都能在这里找到属于自己的兴趣和朋友。我们希望能够构造一个更加美好的网络环境，以应对目前戾气很重的乌烟瘴气的网络社交。</p>
                     </div>
                 </div>
@@ -575,22 +575,22 @@
                 <h2 class="section-title">✦ 社区风向 ✦</h2>
                 <div class="features-grid">
                     <article class="feature-item">
-                        <div class="feature-icon">🎨</div>
+                        <div class="feature-icon"></div>
                         <h3>二次元创作</h3>
                         <p>绘画、同人、Cosplay、Vocaloid…… 用热爱点燃灵感</p>
                     </article>
                     <article class="feature-item">
-                        <div class="feature-icon">💻</div>
+                        <div class="feature-icon"></div>
                         <h3>科技前沿</h3>
                         <p>AI、编程、硬件、数码、开源精神，极客的浪漫</p>
                     </article>
                     <article class="feature-item">
-                        <div class="feature-icon">☕</div>
+                        <div class="feature-icon"></div>
                         <h3>日常茶水间</h3>
                         <p>轻松闲聊，ACGN 杂谈，找到同好，治愈社恐</p>
                     </article>
                     <article class="feature-item">
-                        <div class="feature-icon">🌐</div>
+                        <div class="feature-icon"></div>
                         <h3>纯净网络</h3>
                         <p>友善讨论，理性交流，拒绝戾气，共建乌托邦</p>
                     </article>
@@ -642,9 +642,9 @@
             <div class="footer-social">
                 <span>📡 发现更多</span>
                 <div class="social-icons">
-                    <a href="#" aria-label="GitHub">🐙</a>
-                    <a href="#" aria-label="Twitter">🐦</a>
-                    <a href="#" aria-label="B站">📺</a>
+                    <a href="#" aria-label="GitHub"></a>
+                    <a href="#" aria-label="Twitter"></a>
+                    <a href="#" aria-label="B站"></a>
                 </div>
             </div>
         </div>
@@ -664,13 +664,13 @@
             const savedTheme = localStorage.getItem('moeflux-theme');
             if (savedTheme === 'dark') {
                 body.classList.add('dark-mode');
-                themeToggle.textContent = '☀️ 亮色';
+                themeToggle.textContent = ' 亮色';
             }
 
             themeToggle.addEventListener('click', function () {
                 body.classList.toggle('dark-mode');
                 const isDark = body.classList.contains('dark-mode');
-                themeToggle.textContent = isDark ? '☀️ 亮色' : '🌙 暗色';
+                themeToggle.textContent = isDark ? '亮色' : '暗色';
                 localStorage.setItem('moeflux-theme', isDark ? 'dark' : 'light');
                 // 触发 toast 提示
                 showToast(isDark ? '🌙 已切换至暗色模式' : '☀️ 已切换至亮色模式');
@@ -679,14 +679,14 @@
             // ---- 加入社区按钮 ----
             const joinBtn = document.getElementById('joinBtn');
             joinBtn.addEventListener('click', function () {
-                showToast('🎉 欢迎加入 moeflux！一起共建纯净社区');
+                showToast('欢迎加入 moeflux！一起共建纯净社区');
             });
 
             // ---- 探索社区按钮 ----
             const exploreBtn = document.getElementById('exploreBtn');
             if (exploreBtn) {
                 exploreBtn.addEventListener('click', function () {
-                    showToast('🔍 探索更多二次元 & 科技话题');
+                    showToast(' 探索更多二次元 & 科技话题');
                 });
             }
 
@@ -729,7 +729,7 @@
                 link.addEventListener('click', function (e) {
                     e.preventDefault(); // 阻止跳转，仅演示
                     const text = this.textContent.trim();
-                    showToast(`📂 您点击了「${text}」板块 (演示)`);
+                    showToast(`您点击了「${text}」板块 (演示)`);
                 });
             });
 
@@ -739,7 +739,7 @@
                 link.addEventListener('click', function (e) {
                     e.preventDefault();
                     const text = this.textContent.trim();
-                    showToast(`🔗 即将跳转至「${text}」页面 (演示)`);
+                    showToast(`即将跳转至「${text}」页面 (演示)`);
                 });
             });
 
@@ -749,7 +749,7 @@
                 icon.addEventListener('click', function (e) {
                     e.preventDefault();
                     const label = this.getAttribute('aria-label') || '社交';
-                    showToast(`🌐 访问 ${label} 页面 (演示)`);
+                    showToast(` 访问 ${label} 页面 (演示)`);
                 });
             });
         });
